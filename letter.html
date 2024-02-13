@@ -1,96 +1,240 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Monthsary!</title>
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background:#cdb4db;
-  display:flex;
-  justify-content:center;
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 500px;
-  height: 500px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius:12px;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius:12px;
-  padding:1em;
-  line-height:1.5;
-  text-align:justify;
-}
-
-.flip-card-front {
-  background-color: #ffafcc;
-  color: #fb6f92;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-}
-
-.flip-card-back {
-  background-color: #ffc8dd;
-  color: #ff8fab;
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 20px; /* Adjust padding */
-}
-
-.flip-card-back p {
-  margin: 0; /* Remove default margin */
-}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>open me:></title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
 
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front" onclick="redirectToLink()">
-      <h1>click me!</h1>
-    </div>
-    <div class="flip-card-back">
-      <h1 style="text-align:center;background-color:#ff7096;border-radius:12px;color:#fae0e4">&#128151;Happy 2nd Monthsary Love!!&#128151;</h1> 
-      <p>First of all, I would like to thank you for unconditionally loving me despite all the hurtful things I've said and done to you. I really appreciate every single moment we spend together, and I forever will. Thank you for constantly accepting me for who I am. You are one of the best things that's ever happened to me, and I will forever cherish you as my other half. I love you so much. Just know that I will always be here for you whenever you need someone to lean on. I will do my best to change my unpleasant sides. I always think that you deserve someone better. That's why I will try to be better on things that I am not really good at such as lending emotional support and consistent efforts. I know I'm not the most ideal guy someone could ever hope to have, but you will never need to worry about me ending up with someone else for my heart will forever be yours. I love you!</p> 
+<body>
+  <div class="container">
+    <label>
+      <div class="heart">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg">
+      </div>
+      <input id="messageState" type="checkbox" style="display:none" />
+    </label>
+    <div class="message">
+      <h1>happy valentines day lovee</h1>
+      <p>maraming salamat sa pag stay sakin kahit minsan
+      nag aaway tayo maraming salamat dahil nag stay ka parin i promise
+        i'll treat you better than your past, wag puro ako love ah?
+       take care of yourself wla po ako sa tabi mo para alagaan ka 
+      pag nagkasakit ka, i love you so much lovee sorry kung kaunti 
+      lang yung mga nabigay ko na gifts i promise gagalingan ko pa
+      i love you so much poo loveee, happy valentines day pooo
+      enjoy your day and wag magpaka stress ah? loveyou mwaa</p>
+      <p></p>
+      <p></p>
+      <p> - your laloves(Xyryll) </p>
     </div>
   </div>
-</div>
 
-<script>
-function redirectToLink() {
-  setTimeout(function() {
-    window.location.href = "https://gift-for-my-love.vercel.app/";
-  }, 3000); // Adjust the time here (in milliseconds) for how long you want to wait before redirecting
-}
-</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $("#messageState").on("change", (x) => {
+      $(".message").removeClass("openNor").removeClass("closeNor");
+      if ($("#messageState").is(":checked")) {
+        $(".message").removeClass("closed").removeClass("no-anim").addClass("openNor");
+        $(".heart").removeClass("closeHer").removeClass("openedHer").addClass("openHer");
+        $(".container").stop().animate({
+          "backgroundColor": "#f48fb1"
+        }, 2000);
+        console.log("Abrindo");
+      } else {
+        $(".message").removeClass("no-anim").addClass("closeNor");
+        $(".heart").removeClass("openHer").removeClass("openedHer").addClass("closeHer");
+        $(".container").stop().animate({
+          "backgroundColor": "#fce4ec"
+        }, 2000);
+        console.log("fechando");
+      }
+    });
 
+    $(".message").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+      console.log("Animation End");
+      if ($(".message").hasClass("closeNor"))
+        $(".message").addClass("closed");
+      $(".message").removeClass("openNor").removeClass("closeNor").addClass("no-anim");
+    });
+
+    $(".heart").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+      console.log("Animation End");
+      if (!$(".heart").hasClass("closeHer"))
+        $(".heart").addClass("openedHer").addClass("beating");
+      else
+        $(".heart").addClass("no-anim").removeClass("beating");
+      $(".heart").removeClass("openHer").removeClass("closeHer");
+    });
+  </script>
 </body>
+
 </html>
+<style>h1,
+p {
+  font-family: 'Hind', sans-serif;
+}
+
+p{
+  text-indent: 50px;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+body {
+  margin: 0px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  transiton: transform 2s;
+  z-index: 1;
+}
+
+.heart > img {
+  width: 50px;
+  height: auto;
+}
+
+.message {
+  padding: 20px;
+  background-color: #eee;
+  min-width: 400px;
+  height: 75%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  overflow: hidden;
+  animation-name: openmsg;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+}
+
+.heart > img:hover {
+  animation-name: beat;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+#messageState {}
+
+@keyframes beat {
+  0% {
+    width: 50px;
+  }
+  25% {
+    width: 58px;
+  }
+  30% {
+    width: 50px;
+  }
+  50% {
+    width: 45px;
+  }
+  60% {
+    width: 50px;
+  }
+  75% {
+    width: 58px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
+@keyframes openmsg {
+  0% {
+    height: 0px;
+    padding: 0px 20px;
+  }
+  100% {
+    height: 75%;
+    padding: 20px 20px;
+  }
+}
+
+@keyframes heartMove {
+  0% {
+    top: 50%
+  }
+  100% {
+    top: 85%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.openNor {
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
+.closeNor {
+  animation-direction: reverse;
+  animation-play-state: running;
+}
+
+.no-anim {
+  animation: none;
+}
+
+.closed {
+  height: 0px;
+  padding: 0px 20px;
+}
+
+.bottom {
+  bottom: 5px;
+}
+
+.openHer {
+  animation-name: heartMove;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+.closeHer {
+  animation-name: heartMove;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.beating > img {
+  animation-name: beat;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.openedHer {
+  top: 85%;
+  transform: translate(-50%, 0);
+}</style>
