@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Monthsary!</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:#cdb4db;
+  display:flex;
+  justify-content:center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius:12px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius:12px;
+  padding:1em;
+  line-height:1.5;
+  text-align:justify;
+}
+
+.flip-card-front {
+  background-color: #ffafcc;
+  color: #fb6f92;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.flip-card-back {
+  background-color: #ffc8dd;
+  color: #ff8fab;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px; /* Adjust padding */
+}
+
+.flip-card-back p {
+  margin: 0; /* Remove default margin */
+}
+
+</style>
+</head>
+<body>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" onclick="redirectToLink()">
+      <h1>click me!</h1>
+    </div>
+    <div class="flip-card-back">
+      <h1 style="text-align:center;background-color:#ff7096;border-radius:12px;color:#fae0e4">&#128151;Happy 2nd Monthsary Love!!&#128151;</h1> 
+      <p>First of all, I would like to thank you for unconditionally loving me despite all the hurtful things I've said and done to you. I really appreciate every single moment we spend together, and I forever will. Thank you for constantly accepting me for who I am. You are one of the best things that's ever happened to me, and I will forever cherish you as my other half. I love you so much. Just know that I will always be here for you whenever you need someone to lean on. I will do my best to change my unpleasant sides. I always think that you deserve someone better. That's why I will try to be better on things that I am not really good at such as lending emotional support and consistent efforts. I know I'm not the most ideal guy someone could ever hope to have, but you will never need to worry about me ending up with someone else for my heart will forever be yours. I love you!</p> 
+    </div>
+  </div>
+</div>
+
+<script>
+function redirectToLink() {
+  setTimeout(function() {
+    window.location.href = "https://gift-for-my-love.vercel.app/";
+  }, 3000); // Adjust the time here (in milliseconds) for how long you want to wait before redirecting
+}
+</script>
+
+</body>
+</html>
